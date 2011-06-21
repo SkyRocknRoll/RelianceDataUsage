@@ -1,0 +1,22 @@
+/* This is just an example.  You shouldn't do this. */
+#RelianceDataUsage-hello
+{
+  color: red ! important;
+}
+#RelianceDataUsage-toolbar-button
+{
+  list-style-image: url("chrome://RelianceDataUsage/skin/toolbar-button.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#RelianceDataUsage-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #RelianceDataUsage-toolbar-button
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #RelianceDataUsage-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}

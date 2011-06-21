@@ -1,0 +1,8 @@
+<!ENTITY RelianceDataUsage.label "Your localized menuitem">
+<!ENTITY RelianceDataUsageContext.label "Your Menuitem">
+<!ENTITY RelianceDataUsageContext.accesskey "Y">
+<!ENTITY RelianceDataUsageToolbarButton.label "Your Toolbar Button">
+<!ENTITY RelianceDataUsageToolbarButton.tooltip "This is your toolbar button!">
+<!ENTITY RelianceDataUsageSidebar.label "Your Sidebar">
+<!ENTITY RelianceDataUsageToolbar.name  "example">
+<!ENTITY RelianceDataUsageToolbar.label "This is an example toolbar. You can hide it under View &gt; toolbars &gt; &RelianceDataUsageToolbar.name;">
