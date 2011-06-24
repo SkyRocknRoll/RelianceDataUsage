@@ -8,7 +8,7 @@
   src="chrome://RelianceDataUsage/content/datausage.js"/>
 
 <!-- Firefox -->
-<statusbar id="status-bar">
+<statusbar id="status-bar" style="color:green;font-weight:bold;">
 	<statusbarpanel id="stockwatcher"
 		label="Loading..."
 		tooltiptext="Current value"
