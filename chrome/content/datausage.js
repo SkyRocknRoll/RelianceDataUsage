@@ -8,7 +8,7 @@ var StockWatcher = {
 		//window.setInterval(this.refreshInformation, 10*60*1000);
 	},
 
-	// Called periodically to refresh the stock information
+	// Called Onclick to fetch the details from Reliance DB
 
 
 		
@@ -32,27 +32,31 @@ var StockWatcher = {
 		}
 		var httpRequest = null;
 		var date = new Date();
-		var currentMonth = date.getMonth() + 1;
-		var nextMonth = null;
-		if(currentMonth == 12){
-		nextMonth = 1
+		var startDate;
+		if(date.getDate() <20){
+
+		if(date.getMonth() == 0) {
+		startDate = (date.getFullYear() -1)+"-"+"12"+"-"+"20";
+		}else {
+		startDate = date.getFullYear()+"-"+date.getMonth()+"-"+"20";
 		}
-		else {
-		nextMonth = currentMonth +1;
+
+		}else{
+		startDate = date.getFullYear()+"-"+(date.getMonth() + 1 )+"-"+"20";
 		}
-		var startDate = date.getFullYear()+"-"+currentMonth+"-20";
-		var endDate = date.getFullYear()+"-"+nextMonth+"-19";
-	
+
 		
+		var endDate = date.getFullYear()+"-"+(date.getMonth() + 1)+"-"+date.getDate();
+
+		
+
 		var fullUrl = "http://myservices.relianceada.com/datausage/jsp/ProcessCDRRequest?Mdn="+mdn+"&StartDate="+startDate+"&EndDate="+endDate+"&ProductType=1&RequestType=Query";
 		
-
-
 		function infoReceived()
 		{
 			var usagePanel = document.getElementById('stockwatcher');
 			var output = httpRequest.responseText;
-			usagePanel.label = "Loading...";
+			usagePanel.label = "No Data :(";
 				
 			if (output.length)
 			{
@@ -72,6 +76,8 @@ var StockWatcher = {
 				  return body;
 				})(output);
 	
+			//alert(fullUrl);
+			//alert(content1.innerHTML);
 			//alert(content1.getElementsByTagName('table').length);
 
 			//alert(content1.getElementsByTagName('table')[6]);
