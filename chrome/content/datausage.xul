@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE overlay >
-<overlay id="stockwatcher-overlay"
+<overlay id="DataUsagePanel-overlay"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <script type="application/x-javascript"
@@ -9,10 +9,10 @@
 
 <!-- Firefox -->
 <statusbar id="status-bar" style="color:green;font-weight:bold;">
-	<statusbarpanel id="stockwatcher"
-		label="Loading..."
-		tooltiptext="Current value"
-		onclick="StockWatcher.refreshInformation()"
+	<statusbarpanel id="DataUsagePanel"
+		label="Click Here To Update"
+		tooltiptext="Click To Update"
+		onclick="DataUsage.refreshInformation()"
 	/>
 </statusbar>
 

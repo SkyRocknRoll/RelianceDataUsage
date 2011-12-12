@@ -4,8 +4,12 @@
 <prefwindow id="RelianceDataUsage-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="stringpref1" name="extensions.RelianceDataUsage.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="stringpref1" name="extensions.RelianceDataUsage.MdnNumber" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
     </preferences>
     <label accesskey="&stringpref.accesskey;" control="textstringpref">&stringpref.label;</label><textbox id="textstringpref" preference="stringpref1"/>
+	<preferences>
+      <preference id="dateStringPref" name="extensions.RelianceDataUsage.StartdatePref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+    </preferences>
+    <label accesskey="&datepref.accesskey;" control="textstringpref">&datepref.label;</label><textbox id="dateStringPref" preference="dateStringPref"/>
   </prefpane>
 </prefwindow>

@@ -1,4 +1,4 @@
-var StockWatcher = {
+var DataUsage = {
 	// Install a timeout handler to install the interval routine
 
 	startup: function()
@@ -23,26 +23,33 @@ var StockWatcher = {
 		prefs = prefs.getBranch("extensions.RelianceDataUsage.");
 
 
-		var mdn = prefs.getCharPref("stringpref");
+		var mdn = prefs.getCharPref("MdnNumber");
+		var billStartdate = prefs.getCharPref("StartdatePref");
 		if(mdn == null || mdn=="") {
 		mdn=prompt("Enter Your Mdn Number : Ex:9876543210","");
 		if(mdn== null || mdn ==""){
 		return;}
-		prefs.setCharPref("stringpref",mdn)
+		prefs.setCharPref("MdnNumber",mdn)
+		}
+		if(billStartdate == null || billStartdate=="") {
+		billStartdate=prompt("Enter Billing Start Date(1-31). Normally you can find it in your bill","");
+		if(billStartdate== null || billStartdate ==""){
+		return;}
+		prefs.setCharPref("StartdatePref",billStartdate)
 		}
 		var httpRequest = null;
 		var date = new Date();
 		var startDate;
-		if(date.getDate() <20){
+		if(date.getDate() <billStartdate){
 
 		if(date.getMonth() == 0) {
-		startDate = (date.getFullYear() -1)+"-"+"12"+"-"+"20";
+		startDate = (date.getFullYear() -1)+"-"+"12"+"-"+billStartdate;
 		}else {
-		startDate = date.getFullYear()+"-"+date.getMonth()+"-"+"20";
+		startDate = date.getFullYear()+"-"+date.getMonth()+"-"+billStartdate;
 		}
 
 		}else{
-		startDate = date.getFullYear()+"-"+(date.getMonth() + 1 )+"-"+"20";
+		startDate = date.getFullYear()+"-"+(date.getMonth() + 1 )+"-"+billStartdate;
 		}
 
 		
@@ -54,7 +61,7 @@ var StockWatcher = {
 		
 		function infoReceived()
 		{
-			var usagePanel = document.getElementById('stockwatcher');
+			var usagePanel = document.getElementById('DataUsagePanel');
 			var output = httpRequest.responseText;
 			usagePanel.label = "No Data :(";
 				
@@ -94,7 +101,13 @@ var StockWatcher = {
 			var offPeakMB = content1.getElementsByTagName('table')[2].getElementsByTagName('td')[12].getElementsByTagName('span')[0].innerHTML+"MB";
 			var offPeakGB = content1.getElementsByTagName('table')[2].getElementsByTagName('td')[13].getElementsByTagName('span')[0].innerHTML+"GB";
 
-			usagePanel.label = "NetConnect+ USAGE: " + TotalUsageMB+ " | "+TotalUsageGB ;
+			x = TotalUsageGB.split(".");
+			if (x[0] =="" ) 
+			gb ="."+x[1].split("")[0]+x[1].split("")[1];
+			else
+			gb = x[0]+"."+ x[1].split("")[0]+x[1].split("")[1];
+			
+			usagePanel.label = "NetConnect+: " + TotalUsageMB.split(".",1)+"MB"+ " | "+gb+"GB" ;
 
 			usagePanel.tooltipText = "PeakHours: " +peakMB+" = "+ peakGB+ " | " +"OffPeakHours: " +offPeakMB+" = "+ offPeakGB ;
 	
@@ -114,4 +127,4 @@ var StockWatcher = {
 
 // Install load handler
 
-window.addEventListener("load", function(e) { StockWatcher.startup(); }, false);
+//window.addEventListener("load", function(e) { DataUsage.startup(); }, false);
