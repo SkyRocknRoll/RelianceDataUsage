@@ -2,6 +2,5 @@ content   RelianceDataUsage                 chrome/content/
 skin      RelianceDataUsage   classic/1.0   chrome/skin/
 locale    RelianceDataUsage   en-US         chrome/locale/en-US/
 
-
 overlay   chrome://browser/content/browser.xul  chrome://RelianceDataUsage/content/datausage.xul 
 style chrome://global/content/customizeToolbar.xul chrome://RelianceDataUsage/skin/overlay.css
