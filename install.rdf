@@ -4,7 +4,7 @@
     <em:id>uvaraj6@gmail.com</em:id>
     <em:type>2</em:type>
     <em:name>Reliance Netconnet+ Data Usage</em:name>
-    <em:version>1.4</em:version>
+    <em:version>1.5</em:version>
     <em:creator>Yuvaraj Loganathan</em:creator>
     <em:contributor>Rathi Priya</em:contributor>
     <em:description>Fetch and Display Reliance NetConnect+ Data Usage</em:description>
@@ -15,7 +15,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
         <em:minVersion>2.0</em:minVersion>
-        <em:maxVersion>9.*</em:maxVersion>
+        <em:maxVersion>11.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>

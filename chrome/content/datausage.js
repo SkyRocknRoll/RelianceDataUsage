@@ -15,8 +15,9 @@ var DataUsage = {
 
 	refreshInformation: function()
 	{
-		
-     		
+		var usagePanel = document.getElementById('DataUsagePanel');
+     		usagePanel.label = "Loading...";
+		usagePanel.tooltipText = "Currently we are Fetching data for You!!";
 		var prefs = Components.classes["@mozilla.org/preferences-service;1"]
                     .getService(Components.interfaces.nsIPrefService);
 
@@ -64,6 +65,7 @@ var DataUsage = {
 			var usagePanel = document.getElementById('DataUsagePanel');
 			var output = httpRequest.responseText;
 			usagePanel.label = "No Data :(";
+			usagePanel.tooltipText = "Reliance DataUsage Website is Down!!";
 				
 			if (output.length)
 			{

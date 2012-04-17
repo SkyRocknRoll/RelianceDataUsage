@@ -6,5 +6,5 @@
 <!ENTITY intpref.accesskey "I">
 <!ENTITY stringpref.label "Enter Mdn Number. Ex:9876543210">
 <!ENTITY stringpref.accesskey "M">
-<!ENTITY datepref.label "Enter Billing Start Date(1-31). Normally you can find it in your bill">
+<!ENTITY datepref.label "Enter Billing Start Day of month Ex:26 .Normally you can find it in your bill">
 <!ENTITY datepref.accesskey "D">
